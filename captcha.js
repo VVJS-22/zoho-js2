@@ -1,5 +1,5 @@
+let captcha = ""
 const getCaptcha = () => {
-    let captcha = ""
     let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     const random = () => Math.floor(Math.random() * 62);
     
