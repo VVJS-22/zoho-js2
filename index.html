@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form name="loginForm">
+            <h1>Login</h1>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@outlook.com" required>
+            <div class="error hide" id="email-error">Invalid Email</div>
+            <label for="password">Password</label>
+            <input placeholder="12345678" type="password" name="password" id="password" required>
+            <div name="password-error" class="error hide" id="password-error">Length of password must be greater than or equal to 8.</div>
+            <div class="captcha-wrapper">
+                <div id="captcha"></div>
+                <div class="captcha-input">
+                    <label for="captcha-input">Captcha</label>
+                    <input name="captcha" id="captcha-input">
+                </div>
+            </div>
+            <div class="navigator">
+                <a href="signup.html">New user? Signup.</a><br>
+            </div>
+            <button id="submit" type="button" disabled>Login</button>
+        </form>
+    </div>
+    <script src="captcha.js"></script>
+    <script type="module" src="login.mjs"></script>
+</body>
+</html>
