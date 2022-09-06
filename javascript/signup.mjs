@@ -17,7 +17,7 @@ const signup = () => {
                 users[email] = newuser
                 localStorage.setItem("users", JSON.stringify(users))
                 alert("Signed up successfully!.")
-                location.href = "index.html"
+                location.href = "/index.html"
             } else {
                 alert("User already exists")
                 location.reload()
@@ -28,7 +28,7 @@ const signup = () => {
             }
             localStorage.setItem("users", JSON.stringify(users))
             alert("Signed up successfully!.")
-            location.href = "index.html"
+            location.href = "/index.html"
         }
     } else {
         alert("Invalid Captcha")

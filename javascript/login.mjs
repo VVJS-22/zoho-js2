@@ -15,7 +15,7 @@ const login = () => {
                 if (users[email]["password"] === password) {
                     localStorage.setItem("curUser", email)
                     alert("Loged in Successfully!")
-                    location.href = "dashboard.html"
+                    location.href = "pages/dashboard.html"
                 } else {
                     alert("Invalid Credentials.")
                     location.reload()

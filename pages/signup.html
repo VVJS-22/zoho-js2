@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script>
+        if (localStorage.getItem("curUser")) {
+            location.href = "/pages/dashboard.html"
+        }
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -25,13 +30,13 @@
                 </div>
             </div>
             <div class="navigator">
-                <a href="index.html">Already have an account? Login.</a><br>
+                <a href="/index.html">Already have an account? Login.</a><br>
             </div>
             <button id="submit" type="button" disabled>Sign Up</button>
         </form>
     </div>
-    <script src="html2canvas.min.js"></script>
-    <script src="captcha.js"></script>
-    <script type="module" src="signup.mjs"></script>
+    <script src="/javascript/html2canvas.min.js"></script>
+    <script src="/javascript/captcha.js"></script>
+    <script type="module" src="/javascript/signup.mjs"></script>
 </body>
 </html>
