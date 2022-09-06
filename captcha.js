@@ -6,8 +6,11 @@ const getCaptcha = () => {
     for (let i = 0; i < 6; i++) {
         captcha += chars[random()]
     }
-    
-    document.getElementById("captcha").innerText = captcha
+    const replaceable = document.querySelector("#captcha");
+    replaceable.innerHTML = captcha
+    html2canvas(document.querySelector("#captcha")).then(canvas => {
+        replaceable.parentElement.replaceChild(canvas, replaceable)
+    });
 }
 
 getCaptcha()
