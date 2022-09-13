@@ -1,5 +1,6 @@
 import { validate } from "./validate.mjs";
 import { isValidCaptcha } from "./checkCaptcha.mjs";
+import { Password } from "./password.mjs";
 
 const form = document.getElementsByTagName("form")["loginForm"];
 const submitbtn = document.getElementById("submit")
@@ -12,7 +13,7 @@ const login = () => {
     if (isValidCap) {
         if (users) { 
             if (users[email]) {
-                if (users[email]["password"] === password) {
+                if (Password.decrypt(users[email]["password"]) === password) {
                     localStorage.setItem("curUser", email)
                     alert("Loged in Successfully!")
                     location.href = "pages/dashboard.html"
@@ -21,12 +22,12 @@ const login = () => {
                     location.reload()
                 }
             } else {
-                alert("Invalid Credentials.")
-                location.reload()
+                alert("Oops, you should sign up first.")
+                location.href = "/pages/signup.html"
             }
         } else {
             alert("Oops, you should sign up first.")
-            location.href = "signup.html"
+            location.href = "/pages/signup.html"
         }
     } else {
         alert("Invalid Captcha")

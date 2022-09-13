@@ -1,14 +1,18 @@
 import { User } from "./User.mjs";
 import { validate } from "./validate.mjs";
 import { isValidCaptcha } from "./checkCaptcha.mjs";
+import { Password } from "./password.mjs";
 
 const form = document.getElementsByTagName("form")["signupForm"];
 const submitbtn = document.getElementById("submit")
 
+
+
 const signup = () => {
     const email = form.email.value
     const password = form.password.value
-    const newuser = new User(email, password);
+    
+    const newuser = new User(email, Password.encrypt(password));
     let users = JSON.parse(localStorage.getItem("users"))
     const isValidCap = isValidCaptcha();
     if (isValidCap) {
